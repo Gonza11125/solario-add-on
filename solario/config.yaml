@@ -7,10 +7,11 @@ arch:
   - aarch64
   - amd64
 image: ghcr.io/gonza11125/solario-local
+webui: http://[HOST]:[PORT:3000]
 ports:
   3000/tcp: null
 ports_description:
-  3000/tcp: Optional direct access (disabled by default; use protected Home Assistant ingress)
+  3000/tcp: Optional direct LAN access after first setup (disabled by default; enable a host port in Network settings)
 startup: application
 boot: auto
 stage: stable
