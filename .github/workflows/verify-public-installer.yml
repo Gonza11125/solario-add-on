@@ -20,7 +20,6 @@ jobs:
           persist-credentials: false
 
       - name: Parse Home Assistant app metadata
-        id: info
         uses: home-assistant/actions/helpers/info@a7c616ce81ccda50150bf1595786c71b1883fabb
         with:
           path: ./solario
@@ -29,11 +28,12 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          test '${{ steps.info.outputs.version }}' = '0.6.29'
-          test '${{ steps.info.outputs.image }}' = 'ghcr.io/gonza11125/solario-local'
-          arch='${{ steps.info.outputs.architectures }}'
-          grep -q 'amd64' <<< "$arch"
-          grep -q 'aarch64' <<< "$arch"
+          grep -Fx 'version: "0.6.29"' solario/config.yaml
+          grep -Fx 'image: ghcr.io/gonza11125/solario-local' solario/config.yaml
+          grep -Fx '  - amd64' solario/config.yaml
+          grep -Fx '  - aarch64' solario/config.yaml
+          grep -Fx '  3000/tcp: null' solario/config.yaml
+          grep -Fx 'ingress: true' solario/config.yaml
 
       - name: Verify anonymous image pull
         shell: bash
