@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.6.31
+
+- Fixed a fresh-install migration bug that could invalidate the first generated Solario Local access code after the first add-on restart.
+- Improved automatic Alpha ESS discovery for live production, PV energy, grid import/export, home consumption, battery SOC, and battery voltage using exact entity aliases with unit/state validation.
+- Preserved provisioned agent metadata such as device identity when automatic entity mappings are saved.
+- Prevented environment-only Home Assistant Supervisor credentials from being copied into persistent agent configuration.
+- Added regression coverage for access-code restart persistence, Alpha ESS mappings, and safe agent configuration persistence.
+
 ## 0.6.30
 
 - Hardened Solario Local for the public Free release, including stricter Home Assistant trust boundaries, timestamp validation, online/offline freshness, rate limiting, process isolation, backup protection, and safer cloud unlink/relink behavior.
