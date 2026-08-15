@@ -1,7 +1,8 @@
+# Solario Local 0.6.30 release manifest
 name: Solario Local
-version: "0.6.29"
+version: "0.6.30"
 slug: solar_portal
-description: Local solar monitoring portal with automatic exact Home Assistant metric discovery
+description: Local solar monitoring portal with automatic exact energy metric discovery
 url: https://solario.cloud
 arch:
   - aarch64
