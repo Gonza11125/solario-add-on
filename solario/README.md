@@ -14,4 +14,4 @@ Create the first Solario administrator only through Home Assistant ingress. This
 
 ## Release status
 
-Version 0.6.29 is the current public release.
+Version 0.6.30 is the current public release.
