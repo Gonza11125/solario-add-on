@@ -1,6 +1,6 @@
-# Solario Local 0.7.15 real alerts, real per-device state, savings and the kW fix
+# Solario Local 0.7.19 history by plan: a week on Local, a month on Smart, any day of the year on Pro
 name: Solario Local
-version: "0.7.15"
+version: "0.7.19"
 slug: solar_portal
 description: Local solar monitoring portal with automatic exact energy metric discovery
 url: https://solario.cloud
@@ -37,15 +37,15 @@ options:
   ha_automations: "[]"
   polling_interval: 5000
   anonymous_usage_stats: false
+  support_email: ""
+  paid_upgrades_enabled: false
   entity_power_now: ""
   entity_energy_today: ""
   entity_battery_soc: ""
   entity_battery_voltage: ""
   entity_room_temperature: ""
   entity_room_humidity: ""
-  entity_bojler_switch: ""
   entity_hdo_switch: ""
-  entity_kotel_switch: ""
   entity_grid_import: ""
   entity_grid_export: ""
   entity_grid_power: ""
@@ -59,21 +59,23 @@ options:
   entity_string_4_power: ""
   entity_production_max_10min: ""
   entity_production_avg_10min: ""
+  entity_ev_power: ""
+  entity_ev_energy_today: ""
 schema:
   log_level: list(trace|debug|info|notice|warning|error|fatal)
   database_name: str
   ha_automations: str
   polling_interval: int(1000,60000)
   anonymous_usage_stats: bool
+  support_email: str?
+  paid_upgrades_enabled: bool?
   entity_power_now: str?
   entity_energy_today: str?
   entity_battery_soc: str?
   entity_battery_voltage: str?
   entity_room_temperature: str?
   entity_room_humidity: str?
-  entity_bojler_switch: str?
   entity_hdo_switch: str?
-  entity_kotel_switch: str?
   entity_grid_import: str?
   entity_grid_export: str?
   entity_grid_power: str?
@@ -87,5 +89,8 @@ schema:
   entity_string_4_power: str?
   entity_production_max_10min: str?
   entity_production_avg_10min: str?
+  entity_ev_power: str?
+  entity_ev_energy_today: str?
 environment:
   NODE_ENV: production
+
